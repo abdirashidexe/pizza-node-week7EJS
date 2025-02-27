@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thank you for your order, <%= order.fname %>!</h1>
+    <h2>Pizza Order Summary:</h2>
+    <p>
+        Name: <%= order.fname %> <%= order.lname %> <br>
+        Email: <%= order.email %> <br>
+        Order Method: <%= order.method %> <br>
+
+        <%if (Array.isArray(order.toppings)) {%>
+            <p>Toppings: <%=order.toppings.join(', ')%></p>
+        <%} else%>
+        <%{%>
+            <p>Toppings: <%=order.toppings%></p>
+        <%}%>
+        
+        Size: <%= order.size %> <br>
+    </p>
+</body>
+</html>
